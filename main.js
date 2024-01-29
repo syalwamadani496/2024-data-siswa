@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-import { 
+import {
   getFirestore,
   collection,
   addDoc,
@@ -9,7 +9,6 @@ import {
   query,
   orderBy
 } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbLsq27KJU9tD9pHC8GrPUB7LgEPEQbPU",
@@ -22,3 +21,17 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export async function ambildaftarsiswa() {
+  const siswaRef = collection(db, "siswa");
+  const q = query(siswaRef, orderBy("nama"));
+  const querySnapshot = await getDocs(q);
+  
+  let retval = [];
+  querySnapshot.forEach((doc)=>{
+    retval.push({  id: doc.id, nama: doc.data().nama });
+  })
+  
+  return retval;
+}
