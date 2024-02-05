@@ -33,5 +33,16 @@ export async function ambildaftarsiswa() {
     retval.push({  id: doc.id, nama: doc.data().nama });
   })
   
+  
   return retval;
+}
+export async function tambahSiswa(val) {
+ try {
+  const docRef = await addDoc(collection(db,  "siswa"),{
+    nama : val
+  });
+  console.log ('Berhasil menyimpan dokumen dengan ID' + docRef.id);
+ } catch (e) {
+   console.log ('Error menambah dokumen ' + e);
+ }
 }
