@@ -19,14 +19,14 @@
       <label for="from-label" class="form-label">Nama siswa</label>
       <input type="text" class="form-control" id="input-nama">
     </div>
-    <button type="submit" class="btn btn-primary" id="tombol-Ubah">Ubah</button>
+    <button type="submit" class="btn btn-primary" id="tombol-ubah">ubah</button>
   </form>
   
  <a href="siswa.html" class="mt-1">lihat daftar siswa</a>
  <script type="module">
    import {ambilSiswa, ubahSiswa} from'./main.js';
    
-   let tombolUbah = document.getElementById('tombol-Ubah')
+   let tombolUbah = document.getElementById('tombol-ubah')
    let elemenNamasiswa = document.getElementById('input-nama')
    const queryString = window.location.search;
    const parameterURL = new URLSearchParams(queryString);
