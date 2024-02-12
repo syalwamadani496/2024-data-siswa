@@ -53,7 +53,7 @@ export async function hapusSiwa(docid) {
   await deleteDoc(doc(db, "siswa", docid));
 }
 
-export async functio ubahSiswa(docid, val) {
+export async function ubahSiswa(docid, val) {
   await updateDoc(doc(db, "siswa", docid), {nama: val});
 }
 export async function ambilSiswa(docid) {
