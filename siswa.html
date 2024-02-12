@@ -36,7 +36,7 @@
           data.nama +
           '</label>' +
           '<div>' +
-          '<a href="#" class="me-2 link-ubah"data="'+
+          '<a href="#" class="me-2 link-ubah" data="'+
           '">Ubah</a>' +
           ' <button class="btn btn-danger tombol-hapus" data="' +
           data.id +
@@ -51,7 +51,7 @@
         location.reload();
       })
       $('.link-ubah').click(async function(){
-        window.location.replace('ubah-siswa-html?docid='+ $(this).attr('data'));
+        window.location.replace('ubah-siswa.html?docid='+ $(this).attr('data'));
       })
     });
   </script>
