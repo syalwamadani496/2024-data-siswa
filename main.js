@@ -7,7 +7,9 @@ import {
   deleteDoc,
   doc,
   query,
-  orderBy
+  orderBy,
+  updateDoc
+  
 } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -49,4 +51,14 @@ export async function tambahSiswa(val) {
 
 export async function hapusSiwa(docid) {
   await deleteDoc(doc(db, "siswa", docid));
+}
+
+export async functio ubahSiswa(docid, val) {
+  await updateDoc(doc(db, "siswa", docid), {nama: val});
+}
+export async function ambilSiswa(docid) {
+  const docRef = await doc(db, "siswa",docid);
+  const docSnap = await getDoc(docRef);
+  
+  return await docSnap.data();
 }
