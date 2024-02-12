@@ -29,7 +29,7 @@
    let tombolUbah = document.getElementById('tombol-Ubah')
    let elemenNamasiswa = document.getElementById('input-nama')
    const queryString = window.location.search;
-   const parameterURL = new URLSearchParams{queryString};
+   const parameterURL = new URLSearchParams(queryString);
    const docid = parameterURL.get('docid');
    const siswa = await ambilSiswa(docid);
    
